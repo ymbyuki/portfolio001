@@ -5,6 +5,7 @@ if(isset($_GET['title'])){
 $title = $_GET['title'];
 }
 
+//indexから送信されたものからidを取得
 $sql = 'SELECT * FROM title WHERE title = :title';
 $stmt = dbc()->prepare($sql);
 $stmt -> bindValue(":title",$title);
@@ -12,7 +13,7 @@ $stmt -> execute();
 $res = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-$sql = 'SELECT * FROM content WHERE title_id = :title_id';
+$sql = 'SELECT * FROM content WHERE title_id = :title_id ORDER BY up_date DESC';
 $stmt = dbc()->prepare($sql);
 $stmt -> bindValue(":title_id",$res['id']);
 $stmt -> execute();

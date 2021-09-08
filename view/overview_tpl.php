@@ -5,7 +5,7 @@
 <div class="container mt-5 mb-5 table-responsive">
   <h3 class="mb-3">
       <?php require_once('logic/user_logic.php');
-            echo $res['title'];
+            echo htmlspecialchars($res['title'],ENT_QUOTES, 'UTF-8');
       ?>
   </h3>
 
@@ -36,6 +36,7 @@
 
   <div class="buttonwrapper mt-3 d-flex justify-content-between">
     <a class="btn btn-primary " href="index.php" role="button">戻る</a>
+    <a class="btn btn-primary " href="addcontent.php?title=<?php echo htmlspecialchars($res['title'],ENT_QUOTES, 'UTF-8')?>" role="button">追加</a>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal1">テーブルの削除</button>
   </div>
 

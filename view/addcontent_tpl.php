@@ -12,7 +12,11 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">件名</label>
             <select class="form-select" aria-label="Default select example" name="title_id">
+                <?php if(isset($send_new_title)):?>
+                <option selected><?=$send_new_title?></option>
+                <?php else :?>
                 <option selected></option>
+                <?php endif?>
                 <?php foreach($result as $i => $value):?>
                     <option value=<?=$result[$i]['id']?>><?=$result[$i]['title']?></option>
                 <?php endforeach?>

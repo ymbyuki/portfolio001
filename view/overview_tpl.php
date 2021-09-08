@@ -25,19 +25,18 @@
     
     <?php foreach($result as $i => $value):?>          
 
-      <?php $content_text = $result[$i]['content'];
-            $limit = 150;
-            if(mb_strlen($content_text) > $limit) { 
-                $content = mb_substr($content_text,0,$limit) . ･･･ ;
-            } else {
-                $content = $content_text;
-            } 
-            ?>
-            
+      <!-- <?php $content_text = $result[$i]['content'];
+        $limit = 150;
+        if(mb_strlen($content_text) > $limit) { 
+            $content = mb_substr($content_text,0,$limit) . ･･･ ;
+        } else {
+            $content = $content_text;
+        } 
+        ?> -->
           <tr class="clickable-row" data-href="info.php?id=<?=$result[$i]['id']?>">
               <th scope="row"><?= $result[$i]['title_id'] ?></th>
               <td><?= $result[$i]['up_date'] ?></td>
-              <td><?= $content ?></td>
+              <td><?= $result[$i]['content'] ?></td>
           </tr>
       <?php endforeach?>
     </tbody>
@@ -50,6 +49,7 @@
   </div>
 
 </div>
+
 <!-- 削除用モーダル -->
 <div class="modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">

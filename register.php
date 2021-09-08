@@ -23,7 +23,6 @@
             $stmt -> execute();
             $res = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            print_r($res );
             $stmt = null;
             $dbh = null;
             $message = "書き込みました";

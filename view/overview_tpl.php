@@ -27,7 +27,7 @@
 
       <?php $content_text = $result[$i]['content'];
             $limit = 150;
-            if(strlen($content_text) > $limit) { 
+            if(mb_strlen($content_text) > $limit) { 
                 $content = substr($content_text,0,$limit) . ･･･ ;
             } else {
                 $content = $content_text;

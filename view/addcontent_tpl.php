@@ -12,8 +12,8 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">件名</label>
             <select class="form-select" aria-label="Default select example" name="title_id">
-                <?php if(isset($send_new_title)):?>
-                <option selected><?=$send_new_title?></option>
+                <?php if(isset($_GET['id'])):?>
+                <option selected value="<?=$select_title_id?>"><?=$select_title[0]['title']?></option>
                 <?php else :?>
                 <option selected></option>
                 <?php endif?>

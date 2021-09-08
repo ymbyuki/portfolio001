@@ -1,14 +1,17 @@
 <?php
-    $title = $_POST['title'];
+
 
     require_once('logic/dbc.php');
-    
+
     session_start();
     $token = isset($_POST["token"]) ? $_POST["token"] : "";
     $session_token = isset($_SESSION["token"]) ? $_SESSION["token"] : "";
     unset($_SESSION["token"]);
 
-    if(empty($_POST['title'])){
+
+    $title = $_POST['title'];
+
+    if(empty($title)){
         $message = "入力してください";
     }elseif($token != "" && $token == $session_token) {
         try{
@@ -27,7 +30,7 @@
             $dbh = null;
             $message = "書き込みました";
             }catch(PDOException $e){
-                $message = "書き込みに失敗しました。" . $e -> getMessage();
+                $message = "書き込みに失敗しました。Ex///" . $e -> getMessage();
             }
     }else {
         $message = "書き込みに失敗しました。";

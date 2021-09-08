@@ -7,10 +7,10 @@
     <h4 class="card-title">情報管理</h4>
     <form form action="overview.php" method="GET">
 
-    <select class="form-select" aria-label="Default select example" name="title">
+    <select class="form-select" aria-label="Default select example" name="id">
       <option selected></option>
       <?php foreach($result as $i => $value):?>
-        <option value=<?=$result[$i]['title']?>><?=$result[$i]['title']?></option>
+        <option value=<?=$result[$i]['id']?>><?=$result[$i]['title']?></option>
       <?php endforeach?>
     </select>
     <button type="submit" class="btn btn-primary mt-3">送信</button>

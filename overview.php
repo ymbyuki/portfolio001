@@ -1,21 +1,21 @@
 <?php
 require_once("logic/dbc.php");
 
-if(isset($_GET['title'])){
-$title = $_GET['title'];
+if(isset($_GET['id'])){
+$id = $_GET['id'];
 }
 
-//indexから送信されたものからidを取得
-$sql = 'SELECT * FROM title WHERE title = :title';
+
+$sql = 'SELECT * FROM title WHERE id = :id';
 $stmt = dbc()->prepare($sql);
-$stmt -> bindValue(":title",$title);
+$stmt -> bindValue(":id",$id);
 $stmt -> execute();
 $res = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 $sql = 'SELECT * FROM content WHERE title_id = :title_id ORDER BY up_date DESC';
 $stmt = dbc()->prepare($sql);
-$stmt -> bindValue(":title_id",$res['id']);
+$stmt -> bindValue(":title_id",$id);
 $stmt -> execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

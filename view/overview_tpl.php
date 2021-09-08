@@ -28,7 +28,7 @@
       <?php $content_text = $result[$i]['content'];
             $limit = 150;
             if(mb_strlen($content_text) > $limit) { 
-                $content = substr($content_text,0,$limit) . ･･･ ;
+                $content = mb_substr($content_text,0,$limit) . ･･･ ;
             } else {
                 $content = $content_text;
             } 
@@ -50,7 +50,6 @@
   </div>
 
 </div>
-
 <!-- 削除用モーダル -->
 <div class="modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">

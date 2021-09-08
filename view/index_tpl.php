@@ -4,7 +4,7 @@
 <div class="card-wrapper">
 <div class="card">
   <div class="card-body m-5">
-    <h4 class="card-title">進捗管理</h4>
+    <h4 class="card-title">情報管理</h4>
     <form form action="overview.php" method="GET">
 
     <select class="form-select" aria-label="Default select example" name="title">

@@ -28,7 +28,17 @@
           <tr class="clickable-row" data-href="info.php?id=<?=$result[$i]['id']?>">
               <th scope="row"><?= $result[$i]['title_id'] ?></th>
               <td><?= $result[$i]['up_date'] ?></td>
-              <td><?= $result[$i]['content'] ?></td>
+              <td>
+                <?php
+                    $content = $result[$i]['content'];
+                    $limit = 150;
+                    if(mb_strlen($content) > $limit) { 
+                        echo  mb_substr($content,0,$limit) . ･･･ ;
+                    } else {
+                        echo  $content;
+                    } 
+                  ?>
+              </td>
           </tr>
       <?php endforeach?>
     </tbody>
